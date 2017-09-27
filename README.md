@@ -13,6 +13,7 @@ Using a circleci base image speeds up the `Spin up Environment` step as this ima
 * git 2.1.4
 * curl 7.38.0
 * wget 1.16
+* sed 4.2.2
 * gcc (Debian 6.3.0-18) 6.3.0
 * docker 17.06.2-ce
 * docker-compose 1.16.1
