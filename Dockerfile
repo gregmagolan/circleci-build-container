@@ -1,4 +1,4 @@
-FROM circleci/node:8.5.0-browsers
+FROM circleci/node:8.8.0-browsers
 
 USER root
 
@@ -10,9 +10,9 @@ RUN RSYNC_VER="3.1.1-3" \
  && apt-get install -y rsync=$RSYNC_VER
 
 #
-# Zulu OpenJDK 8.15.0.1
+# Zulu OpenJDK 8.23.0.3
 #
-RUN ZULUJDK_VER="8.15.0.1" \
+RUN ZULUJDK_VER="8.23.0.3" \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x219BD9C9 \
  && echo "deb http://repos.azulsystems.com/debian stable main" >> /etc/apt/sources.list.d/zulu.list \
  && apt-get -qq update \
@@ -20,9 +20,9 @@ RUN ZULUJDK_VER="8.15.0.1" \
  && rm -rf /var/lib/apt/lists/*
 
 #
-# Bazel 0.5.4
+# Bazel 0.7.0
 #
-RUN BAZEL_VER="0.5.4" \
+RUN BAZEL_VER="0.7.0" \
  && wget -q -O - https://bazel.build/bazel-release.pub.gpg | apt-key add - \
  && echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" > /etc/apt/sources.list.d/bazel.list \
  && apt-get -qq update \
